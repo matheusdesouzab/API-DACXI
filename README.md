@@ -32,13 +32,19 @@ A aplicação está disponível para ser acessada pela internet, mas, caso você
 <p>Primeiro clone o repositório do projeto API-Crypto.</p>
 
 ```bash
-git clone <https://github.com/matheusdesouzab/API-Crypto.git>
+git clone https://github.com/matheusdesouzab/API-DACXI.git
 ```
 
 <p>Em seguida, abra no seu terminal a pasta onde o projeto foi instalado e execute o comando abaixo para instalar as dependências necessárias para o projeto rodar.</p>
 
 ```
 npm install
+```
+
+Execute o comando abaixo para que os arquivos de `vendor` sejam gerados de forma automática.
+
+```
+composer install
 ```
 
 <p>Execute a aplicação em modo de desenvolvimento.</p>
@@ -53,7 +59,17 @@ Para verificar se a aplicação está rodando, execute o comando `php artisan se
 
 #### Configurando o banco de dados
 
-Com a aplicação já funcionando em seu ambiente de desenvolvimento, você ainda precisa criar e configurar um banco de dados. Para isso, crie uma base de dados e em seguida configure o arquivo `.env` com os dados relacionados ao banco que você acabou de criar, em seguida, execute o comando `php artisan migrate` para a criação das tabelas de forma automática. Por fim, execute o comando `php artisan DB:seed` para que os dados adicionais da tabela **coin_type** sejam criados de forma automática. Logo mais abaixo você irá entender como estão organizadas as tabelas que você acabou de criar.
+Com a aplicação já funcionando em seu ambiente de desenvolvimento, você ainda precisa criar e configurar um banco de dados. Para isso, primeiro crie uma base de dados, depois crie um arquivo com o nome `.env`, copie o conteudo do arquivo `.env.example` para esse novo arquivo. Agora configure o arquivo com os dados relacionados ao banco que você acabou de criar, em seguida, execute o comando abaixo para a criação das tabelas de forma automática:
+
+```
+php artisan migrate
+```
+
+Por fim, execute o comando abaixo para que os dados adicionais da tabela **coin_type** sejam criados de forma automática. Logo mais abaixo você irá entender como estão organizadas as tabelas que você acabou de criar.
+
+```
+php artisan db:seed
+```
 
 <div id="funcionalidades-e-demonstração-da-aplicação"/>
 
